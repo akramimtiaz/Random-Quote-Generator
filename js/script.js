@@ -45,31 +45,27 @@ function getRandomQuote(quotes){
 }
 
 
+function printQuote(){
+  let randomQuote = getRandomQuote(quotes);
+  let quoteBox = document.getElementById("quote-box");
+  let htmlQuote = '';
 
-/***
-  Create the `printQuote` function to: 
-   - Call the `getRandomQuote` function and assign it to a variable.
-   - Create a variable for the HTML string and set it equal to an empty string.
-   - Use the HTML template in the instructions or the markup in the index.html file, AND 
-     the random quote vairable to build your HTML string.
-   - Add the quote and source section to the HTML string.
-   - Use an if statement to check for the citation property before adding it to the HTML string.
-   - Use an if statement to check for the year property before adding it to the HTML string.
-   - Don't forget to close that final `p` tag.
-   - Set the `innerHTML` of the `quote-box` div to the HTML string. 
-***/
+  htmlQuote += '<p class="quote">' + randomQuote.quote + '</p>';
+  htmlQuote += '<p class="source">' + randomQuote.source; 
 
+  //if the quote contains a citation, add it to the html string to be output
+  if(randomQuote.citation){
+    htmlQuote += '<span class="citation">' + randomQuote.citation + '</span>';
+  }
 
+  //if the quote has a year specified, add it to the html string to be output
+  if(randomQuote.year){
+    htmlQuote += '<span class="year">' + randomQuote.year + '</span>';
+  }
 
-
-/***
-  When the "Show another quote" button is clicked, the event listener 
-  below will be triggered, and it will call, or "invoke", the `printQuote` 
-  function. So do not make any changes to the line of code below this 
-  comment.
-***/
-
-//document.getElementById('loadQuote').addEventListener("click", printQuote, false);
+  htmlQuote += '</p>'; 
+  quoteBox.innerHTML = htmlQuote; //add the html content to the web-page
+}
 
 
-// Remember to delete the comments that came with this file, and replace them with your own code comments.
+document.getElementById('loadQuote').addEventListener("click", printQuote, false);
