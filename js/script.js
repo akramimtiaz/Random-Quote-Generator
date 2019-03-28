@@ -47,7 +47,32 @@ function getRandomQuote(quotes){
   return quotes[randomNum];
 }
 
+//generate a Random Number between 0 and upper. (e.g. 0-255)
+function getRandomNum(upper){
+  return Math.floor( Math.random() * upper );
+}
 
+
+//changes the background color of the body and loadquote-button to a random color.
+function changeBackgroundColor(){
+  //locate and store the body and loadquote-button
+  let body = document.querySelector("body");
+  let button = document.querySelector("#loadQuote");
+
+  //generate a random color in the format rgb(x,y,z) where x,y and z are values between 0-255
+  let color = "rgb(" + getRandomNum(255) + "," + getRandomNum(255) + "," + getRandomNum(255) + ")";
+  
+  //set the background color of the body and loadquote-button to the randomly generated color
+  button.setAttribute("style", "background-color:" + color);
+  body.setAttribute("style", "background-color:" + color);
+  
+}
+
+
+/*
+Obtains a random quote from the quotes array, changes the bg color, 
+builds the HTML string and writes it to the quote-box div element. 
+*/
 function printQuote(){
   let randomQuote = getRandomQuote(quotes);
   let quoteBox = document.getElementById("quote-box");
@@ -71,7 +96,8 @@ function printQuote(){
     htmlQuote += '<span class="tag">' + randomQuote.tag + '</span>';
   }
 
-  htmlQuote += '</p>'; 
+  htmlQuote += '</p>';
+  changeBackgroundColor(); 
   quoteBox.innerHTML = htmlQuote; //add the html content to the web-page
 }
 
