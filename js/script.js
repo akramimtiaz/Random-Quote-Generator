@@ -102,4 +102,7 @@ function printQuote(){
 }
 
 
+//adds an event listnener to the loadQuote button, such that each time it's clicked the printQuote function is called.
 document.getElementById('loadQuote').addEventListener("click", printQuote, false);
+//prints a new quote to the page every 20s by calling the printQuote function periodically.
+window.setInterval(printQuote, 20000);
