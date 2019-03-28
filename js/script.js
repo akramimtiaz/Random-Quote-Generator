@@ -14,9 +14,38 @@ project 1 - A Random Quote Generator
   Add the `year` property to at least one object in the array.
   Use console.log() to log your array of quotes to the console.
 ***/
-
-
-
+// Create the array of quote objects
+let quotes = [
+  {
+    quote: "Success is not final; failure is not fatal: It is the courage to continue that counts.", 
+    source: "Winston S. Churchill"
+  },
+  {
+    quote: "The difference between who you are and who you want to be is what you do.", 
+    source: "Anonymous"
+  },
+  {
+    quote: "It's hard enough to find an error in your code when you're looking for it; it's even harder when you've assumed your code is error-free.", 
+    source: "Steve McConnell", 
+    citation: "Code Complete", 
+    year: 1993
+  },
+  {
+    quote: "Hiring people to write code to sell is not the same as hiring people to design and build durable, usable, dependable software.", 
+    source: "Larry Constantine", 
+    citation: "Beyond Chaos: The Expert Edge in Managing Software Development", 
+    year: 2001
+  },
+  {
+    quote: "If builders built buildings the way programmers wrote programs, then the first woodpecker that came along would destroy civilisation.", 
+    source: "Gerald Weinberg"
+  },
+  {
+    quote: "There are two ways to write error-free programs; only the third works.", 
+    source: "Alan J. Perlis"
+  }
+];
+console.log(quotes);
 
 /***
   Create the `getRandomQuote` function to:
@@ -50,7 +79,7 @@ project 1 - A Random Quote Generator
   comment.
 ***/
 
-document.getElementById('loadQuote').addEventListener("click", printQuote, false);
+//document.getElementById('loadQuote').addEventListener("click", printQuote, false);
 
 
 // Remember to delete the comments that came with this file, and replace them with your own code comments.
