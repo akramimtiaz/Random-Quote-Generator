@@ -1,19 +1,7 @@
 /******************************************
-Treehouse FSJS Techdegree:
-project 1 - A Random Quote Generator
+Treehouse FSJS Techdegree: project 1 - A Random Quote Generator
 ******************************************/
 
-// Study guide for this project - https://drive.google.com/file/d/1s5grutGuQFwJcQP8bFwEI69Q8FCkGdDk/view?usp=sharing
-
-
-/*** 
-  Create the array of quote objects and name it `quotes`.
-  Add at least five quote objects to the `quotes` array.
-  Give each quote object a `quote` and `source` property.
-  Add the `citation` property to at least one object in the array.
-  Add the `year` property to at least one object in the array.
-  Use console.log() to log your array of quotes to the console.
-***/
 // Create the array of quote objects
 let quotes = [
   {
@@ -47,12 +35,14 @@ let quotes = [
 ];
 console.log(quotes);
 
-/***
-  Create the `getRandomQuote` function to:
-   - Create a variable to store a random number 
-   - Cse the random number to `return` a random quote object from the `quotes` array.
-***/
-
+/*
+generate a Random Number between 0 and the number of quotes in the quotes Array (e.g. 0-5)
+and return the quote object from the array at the index of Random Number
+*/
+function getRandomQuote(quotes){
+  let randomNum = Math.floor( Math.random() * quotes.length );
+  return quotes[randomNum];
+}
 
 
 
