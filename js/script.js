@@ -6,7 +6,8 @@ Treehouse FSJS Techdegree: project 1 - A Random Quote Generator
 let quotes = [
   {
     quote: "Success is not final; failure is not fatal: It is the courage to continue that counts.", 
-    source: "Winston S. Churchill"
+    source: "Winston S. Churchill",
+    tag: "motivation"
   },
   {
     quote: "The difference between who you are and who you want to be is what you do.", 
@@ -16,7 +17,8 @@ let quotes = [
     quote: "It's hard enough to find an error in your code when you're looking for it; it's even harder when you've assumed your code is error-free.", 
     source: "Steve McConnell", 
     citation: "Code Complete", 
-    year: 1993
+    year: 1993,
+    tag: "software"
   },
   {
     quote: "Hiring people to write code to sell is not the same as hiring people to design and build durable, usable, dependable software.", 
@@ -26,14 +28,15 @@ let quotes = [
   },
   {
     quote: "If builders built buildings the way programmers wrote programs, then the first woodpecker that came along would destroy civilisation.", 
-    source: "Gerald Weinberg"
+    source: "Gerald Weinberg",
+    tag: "humor"
   },
   {
     quote: "There are two ways to write error-free programs; only the third works.", 
-    source: "Alan J. Perlis"
+    source: "Alan J. Perlis",
+    tag: "humor"
   }
 ];
-console.log(quotes);
 
 /*
 generate a Random Number between 0 and the number of quotes in the quotes Array (e.g. 0-5)
@@ -61,6 +64,11 @@ function printQuote(){
   //if the quote has a year specified, add it to the html string to be output
   if(randomQuote.year){
     htmlQuote += '<span class="year">' + randomQuote.year + '</span>';
+  }
+
+  //if the quote has an added tag, add it to the html string to be output
+  if(randomQuote.tag){
+    htmlQuote += '<span class="tag">' + randomQuote.tag + '</span>';
   }
 
   htmlQuote += '</p>'; 
